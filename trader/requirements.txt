@@ -1,0 +1,9 @@
+pyalgotrade
+pandas
+sqlalchemy
+quandl
+matplotlib
+ws4py
+tensorflow
+numpy
+tornado

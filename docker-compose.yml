@@ -1,0 +1,26 @@
+version: '3'
+services:
+    airflow:
+        build: airflow/.
+        ports:
+            - 8090:8090
+        volumes:
+#            - ./airflow/logs:/usr/local/airflow/logs
+            - ./airflow/dags:/usr/local/airflow/dags
+            - /var/run/docker.sock:/var/run/docker.sock
+    superset:
+        build: superset/.
+        ports:
+            - 8088:8088
+        env_file: superset-config.env
+        volumes:
+            - ./superset/config:/etc/superset
+            - ./superset/db:/var/lib/superset
+            - ./sqlite:/etc/superset/db
+    trader:
+        build: trader/.
+        container_name: trader_container
+        volumes:
+            - ./sqlite:/sqlite
+        env_file: trader-config.env
+        tty: True
