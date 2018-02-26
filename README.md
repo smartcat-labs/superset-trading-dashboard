@@ -41,9 +41,9 @@ docker-compose up --build
 In order to make or load Dashboard you'll need to prepare database, 
 load it to Apache Superset and import Dashboard pickle file. 
 
-- Go to Airflow UI (`localhost:8090`) and turn-on `initial` DAG. 
-- After it finishes, turn-on also `weekly` DAG and go to Superset UI (`localhost:8088`)
-and login with credentials from env file.
+- Go to Airflow UI (`localhost:8090`) and turn-on `weekly` DAG. 
+- After DAG finishes, go to Superset UI (`localhost:8088`)
+and login with credentials from env file. 
 - Import database: internally it is mounted to `/etc/superset/db` and called `trader.db`.
 - Import pickled Dashboard from superset/dashboard directory.
 - Make some changes (add other traders, tweak RLtrader, etc..)

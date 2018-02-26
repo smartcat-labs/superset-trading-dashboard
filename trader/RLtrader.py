@@ -10,11 +10,11 @@ from pyalgotrade.bitstamp import broker
 from pyalgotrade.barfeed import quandlfeed
 from pyalgotrade.bitstamp import barfeed
 
-N_SIM = 100
+N_SIM = 10
 INITIAL_CASH = 1000.0
 # how large of a window of BTC prices to view
 # ( 21/mth, 63/qtr, 251/yr for backtesting, number of order_book updates for paper trading)
-HISTORY = 300
+HISTORY = 100
 
 
 class QLearningDecisionPolicy():
